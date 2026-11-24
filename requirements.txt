@@ -1,0 +1,3 @@
+# CenturyVault backend runs on the Python 3.12 standard library only.
+# No third-party packages are installed, so Vercel builds are effectively instant.
+# Used modules: http.server, json, math, re, os, pathlib, collections, urllib.parse.

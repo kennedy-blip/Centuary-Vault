@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="CenturyVault — a 100-project engineering archive preview and GitHub Wiki documentation hub. Zero TypeScript, Python serverless API, static Vanilla frontend." />
+    <meta name="theme-color" content="#070a12" />
+    <title>CenturyVault · 100 Projects, One Archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">Skip to catalog</a>
+
+    <header class="topbar">
+      <div class="topbar__inner">
+        <a class="brand" href="/" aria-label="CenturyVault home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="26" height="26" rx="7" stroke="currentColor" stroke-width="1.6" />
+              <path d="M10 10h12v12H10z" stroke="currentColor" stroke-width="1.4" />
+              <path d="M10 16h12M16 10v12" stroke="currentColor" stroke-width="1.2" opacity=".65" />
+            </svg>
+          </span>
+          <span class="brand__text">
+            <strong>CenturyVault</strong>
+            <small>100-project archive · Wiki hub</small>
+          </span>
+        </a>
+
+        <div class="engine-status" role="status" aria-live="polite">
+          <span class="engine-status__dot" aria-hidden="true"></span>
+          <span id="engine-detail">CenturyVault Engine: Active • 100/100 Projects Indexed</span>
+          <span class="source-badge" id="source-badge" data-source="loading">CHECKING</span>
+        </div>
+
+        <nav class="topbar__actions" aria-label="Documentation shortcuts">
+          <a class="button button--ghost" href="https://github.com/kennedy-blip/Centuary-Vault/wiki" target="_blank" rel="noopener noreferrer">Wiki ↗</a>
+          <button class="button button--violet" id="wiki-open" type="button">Sync guide</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__glow" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow"><span class="eyebrow__line"></span> Zero TypeScript · Python serverless · Vanilla web</p>
+          <h1 id="hero-title">One hundred projects.<br /><span>One searchable vault.</span></h1>
+          <p class="hero__lede">
+            A concise live index of the full 100-day engineering challenge. Deep architecture notes,
+            production lessons and Wiki publishing instructions live in structured Markdown — not in the viewport.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--cyan" href="#catalog">Browse all 100 days ↓</a>
+            <a class="button button--ghost" id="wiki-guide-link" href="#wiki-guide">Read the Wiki sync guide →</a>
+          </div>
+          <dl class="hero__meta">
+            <div><dt>API</dt><dd>/api/projects · /api/summary</dd></div>
+            <div><dt>Frontend</dt><dd>HTML + CSS + ES6, no bundler</dd></div>
+            <div><dt>Finale</dt><dd>Days 086-100 · Go + Python + SQLite</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="panel overview" aria-labelledby="overview-title">
+        <div class="panel__heading">
+          <div>
+            <p class="section-kicker">Archive overview</p>
+            <h2 id="overview-title">Arc &amp; stack map</h2>
+          </div>
+          <span class="integrity-chip"><span class="integrity-chip__dot"></span><span id="index-integrity">100/100 days indexed</span></span>
+        </div>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <span class="stat-card__label">Projects indexed</span>
+            <strong id="stat-total">100</strong>
+            <span class="stat-card__foot">Day 001 — Day 100</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__label">Arcs</span>
+            <strong id="stat-arcs">9</strong>
+            <span class="stat-card__foot">3 delivery phases</span>
+          </div>
+          <div class="stat-card stat-card--rose">
+            <span class="stat-card__label">Polyglot capstone</span>
+            <strong id="stat-capstone">15</strong>
+            <span class="stat-card__foot">DriftCheck → ReleaseGate</span>
+          </div>
+          <div class="stat-card stat-card--wide">
+            <span class="stat-card__label">Runtime &amp; language mix</span>
+            <div class="mix" id="runtime-mix"></div>
+            <span class="stat-card__foot" id="architecture-note">0 TypeScript files · no build step</span>
+          </div>
+        </div>
+
+        <div class="phase-row" id="phase-row" aria-label="Phase filters"></div>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="panel__heading catalog-heading">
+          <div>
+            <p class="section-kicker">Preview catalog</p>
+            <h2 id="catalog-title">Days 001 — 100</h2>
+          </div>
+          <p class="catalog-heading__hint">Compact previews · full breakdowns in the Wiki</p>
+        </div>
+
+        <div class="control-bar panel" role="search">
+          <div class="control-bar__search">
+            <label class="sr-only" for="search-input">Search projects</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Search title, stack, problem or mechanism…" autocomplete="off" />
+            <kbd>/</kbd>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">Arc</span>
+            <div class="pill-row" id="arc-filters" aria-label="Filter by arc"></div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">Stack</span>
+            <div class="pill-row" id="stack-filters" aria-label="Filter by stack"></div>
+          </div>
+          <div class="control-bar__footer">
+            <span id="result-count">100 projects shown</span>
+            <span id="filter-note">All arcs · any stack</span>
+          </div>
+        </div>
+
+        <div class="project-grid" id="project-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="panel wiki-cta" id="wiki-guide" aria-labelledby="wiki-cta-title">
+        <div>
+          <p class="section-kicker">Full documentation</p>
+          <h2 id="wiki-cta-title">The deep dives live in the Wiki</h2>
+          <p>five Markdown files, ready to copy into <code>&lt;repo&gt;.wiki.git</code> and publish in a few commands.</p>
+        </div>
+        <div class="wiki-cta__links">
+          <a class="button button--violet" href="https://github.com/kennedy-blip/Centuary-Vault/wiki/Home" target="_blank" rel="noopener noreferrer">Wiki Home ↗</a>
+          <a class="button button--ghost" href="https://github.com/kennedy-blip/Centuary-Vault/wiki/Days-086-to-100-Polyglot-Vercel-Systems" target="_blank" rel="noopener noreferrer">Days 086-100 ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>CenturyVault · built as the final showcase of a 100-project engineering challenge.</span>
+      <nav aria-label="Footer links">
+        <a href="https://github.com/kennedy-blip/Centuary-Vault" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+        <a href="https://github.com/kennedy-blip/Centuary-Vault/wiki/GitHub-Wiki-Sync-Guide" target="_blank" rel="noopener noreferrer">Sync guide ↗</a>
+      </nav>
+    </footer>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+      <div class="drawer__header">
+        <div>
+          <p class="section-kicker">Vault drawer</p>
+          <h2 id="drawer-title">Wiki documentation</h2>
+          <p id="drawer-subtitle">Structure, sync commands and project mechanisms</p>
+        </div>
+        <button class="drawer__close" id="drawer-close" type="button" aria-label="Close drawer">×</button>
+      </div>
+      <div class="drawer-tabs" id="drawer-tabs" role="tablist"></div>
+      <div class="drawer__body" id="drawer-body"></div>
+    </aside>
+  </body>
+</html>
